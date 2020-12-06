@@ -34,7 +34,7 @@ class User {
 
   generateJWT() {
     this.jwt = jwt.sign({ username: this.username }, JWT_SECRET, {
-      expiresIn: 36000,
+      expiresIn: "7d",
     });
   }
 

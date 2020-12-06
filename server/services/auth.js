@@ -9,7 +9,7 @@ const signUp = async (email, password, username) => {
     throw new Error("User is existed");
   }
 
-  const user = new User(email);
+  const user = new User(email, username);
   user.generatePassword(password);
   const savedUser = await userRepo.save(user);
   return savedUser;
