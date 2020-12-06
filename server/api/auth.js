@@ -14,8 +14,9 @@ router.post("./sign-in", async (req, res) => {
 router.post("./sign-up", async (req, res) => {
   try {
     const newUser = await AuthService.signUp(
-      req.body.username,
-      req.body.password
+      req.body.email,
+      req.body.password,
+      req.body.username
     );
     res.json(newUser.toJson());
   } catch (err) {
