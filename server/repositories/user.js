@@ -35,8 +35,8 @@ const save = async (user) => {
       returnOriginal: false,
     }
   );
-
-  const savedUser = new User(dbResult.value, email);
+  console.log(dbResult);
+  const savedUser = new User(dbResult.value.email, dbResult.value.username);
   return savedUser;
 };
 
